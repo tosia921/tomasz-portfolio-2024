@@ -3,7 +3,7 @@ import { getFormattedDate } from "../utils";
 
 export default function PostCard({ post }) {
   return (
-    <div className="card bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="card bg-tertiary shadow-lg rounded-lg overflow-hidden">
       <Link to={`${post.url}`}>
         <img
           alt="Cover image for A Guide to CSS Flexbox"

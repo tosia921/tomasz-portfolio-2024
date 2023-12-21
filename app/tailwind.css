@@ -2,110 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-hr {
-  padding: 10px;
+@layer base {
+  /* fonts */
+  /* @font-face {
+		font-family: 'Graphik Web';
+		src: url('/fonts/Graphik-Regular-Web.eot');
+		src:
+			url('/fonts/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+			url('/fonts/Graphik-Regular-Web.woff2') format('woff2'),
+			url('/fonts/Graphik-Regular-Web.woff') format('woff');
+		font-weight: 400;
+		font-style: normal;
+		font-stretch: normal;
+	} */
+
+  /* root variables */
+  :root {
+    --color-text-primary: 245, 245, 245;
+    --color-text-secondary: 255, 102, 0;
+    --color-text-tertiary: 0, 0, 0;
+    --color-bg-primary: 7, 7, 7;
+    --color-bg-secondary: 15, 23, 42;
+    --color-bg-tertiary: 255, 102, 0;
+    --color-bg-error: 224, 0, 0;
+    --color-bg-notification: 0, 0, 255;
+  }
+  /* .dark-theme {
+		--color-text-light: 0, 0, 0;
+		--color-text-dark: 255, 255, 255;
+		--color-bg-light: 0, 0, 0;
+		--color-bg-dark: 255, 255, 255;
+		--color-bg-grid: 5, 5, 5;
+		--color-bg-error: 224, 0, 0;
+		--color-bg-notification: 0, 0, 255;
+	} */
 }
 
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
+/* 62.5% of 16px browser font size is 10px */
+html {
+  font-size: 62.5%;
 }
 
-.post-details {
-  padding: 1rem;
-  width: 100%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+a,
+button,
+span,
+p {
+  color: rgba(var(--color-text-primary), 1);
 }
 
-.post-details p {
-  color: rgb(17, 22, 20);
-  margin: 2px;
-}
-
-.post-details h2 {
-  font-size: 25px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.post-details h3 {
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.post-details img {
-  margin: 0 auto;
-  padding: 5px;
-}
-
-.post-details UL {
-  margin: 5px;
-  padding: 15px;
-}
-.post-details li {
-  list-style: square;
-}
-
-.post-details p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.post-details a {
-  text-decoration: underline;
-}
-
-.post-details pre {
-  border: 1px solid #ebebeb;
-  border-radius: 5px;
-  padding: 2px;
-  margin: 2px;
-  background-color: rgb(246, 244, 244);
-}
-
-.about-content {
-  padding: 1rem;
-  width: 100%;
-}
-
-.about-content h1 {
-  font-size: 25px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.about-content p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.about-content UL {
-  margin: 5px;
-  padding: 5px;
-}
-
-.about-content UL LI {
-  padding: 5px;
-  margin: 5px;
-}
-
-.about-content UL LI a {
-  margin-right: 2px;
-  text-decoration: underline;
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

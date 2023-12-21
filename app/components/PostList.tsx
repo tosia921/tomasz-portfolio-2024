@@ -10,14 +10,14 @@ export default function PostList({ posts }) {
 
   return (
     <>
-      <div className="px-8 py-8 bg-gray-100">
+      {/* <div className="py-8">
         <LatestPost post={latestPost} />
-      </div>
+      </div> */}
 
-      {restPosts.length > 0 && (
-        <div className="px-8 py-16">
+      {posts.length > 0 && (
+        <div className="py-16">
           <div className="grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {restPosts.map((post) => (
+            {posts.map((post) => (
               <PostCard key={post?.node?.slug} post={post?.node} />
             ))}
           </div>
