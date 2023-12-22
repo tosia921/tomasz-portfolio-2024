@@ -39,7 +39,7 @@ export default {
       "2xl": "1536px",
     },
     fontFamily: {
-      body: ["Inter Tight", "sans-serif"],
+      body: ["Roboto", "sans-serif"],
       secondary: ["Alegreya Sans SC", "sans-serif"],
     },
     fontWeight: {
@@ -216,6 +216,14 @@ export default {
       secondary: withOpacity("--color-text-secondary"),
       tertiary: withOpacity("--color-text-tertiary"),
       error: withOpacity("--color-bg-error"),
+    },
+    colors: {
+      primary: withOpacity("--color-text-primary"),
+      secondary: withOpacity("--color-text-secondary"),
+      tertiary: withOpacity("--color-text-tertiary"),
+      error: withOpacity("--color-bg-error"),
+      notification: withOpacity("--color-bg-notification"),
+      transparent: "transparent",
     },
     backgroundColor: {
       primary: withOpacity("--color-bg-primary"),
