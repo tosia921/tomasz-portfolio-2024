@@ -1,7 +1,7 @@
 import { gql } from "graphql-request";
 import { getClient } from "../lib/graphQLClient";
 
-export const getAllPosts = async (tags) => {
+export const getAllPosts = async (tags: string[] | null) => {
   const client = getClient();
   //denydevito.hashnode.dev
   const data = await client.request(
@@ -9,7 +9,7 @@ export const getAllPosts = async (tags) => {
       query allPosts($tags: [ObjectId!]) {
         publication(host: "denydevito.hashnode.dev") {
           title
-          posts(first: 20, filter: { tags: $tags }) {
+          posts(first: 6, filter: { tags: $tags }) {
             pageInfo {
               hasNextPage
               endCursor

@@ -75,6 +75,13 @@ export default {
           fontWeight: "400",
         },
       ],
+      md: [
+        "2rem",
+        {
+          lineHeight: "2.2rem",
+          fontWeight: "400",
+        },
+      ],
       lg: [
         "2.4rem",
         {
@@ -252,6 +259,9 @@ export default {
       },
       minWidth: {
         screen: "100vw",
+      },
+      animation: {
+        "ping-slow": "ping .75s linear infinite",
       },
     },
   },

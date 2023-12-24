@@ -12,6 +12,7 @@ import LinkedinIcon from "~/icons/LinkedinIcon";
 import HashnodeIcon from "~/icons/HashnodeIcon";
 import BloggerIcon from "~/icons/BloggerIcon";
 import TwitterIcon from "~/icons/TwitterIcon";
+import ArrowdownIcon from "~/icons/ArrowdownIcon";
 
 export const meta: MetaFunction = () => {
   return [
@@ -23,15 +24,43 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+type Post = {
+  title: string;
+  brief: string;
+  coverImage: {
+    url: string;
+  };
+  publishedAt: string;
+  readTimeInMinutes: number;
+  slug: string;
+  subtitle: string;
+  url: string;
+  tags: string[];
+};
+
+type Posts = Post[];
+
 export async function loader() {
-  const posts = await getAllPosts();
+  const posts = (await getAllPosts()) as Posts;
   return posts;
 }
 export default function Index() {
   const posts = useLoaderData();
+
+  const handleClickScroll = (id: string) => {
+    if (id) {
+      const yOffset = -30;
+      const element = document.getElementById(id);
+
+      if (!element) return;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
   return (
     <>
-      <section className="min-h-[calc(100vh-70px)] flex justify-center items-center px-16 py-32">
+      <section className="min-h-[calc(100vh-70px)] flex flex-col gap-32 justify-center items-center px-16 py-32">
         <div className="flex items-center gap-24">
           <img
             className="rounded-full h-100 w-auto shadow-2xl"
@@ -43,7 +72,7 @@ export default function Index() {
           <div className="flex flex-col">
             <h1 className="text-3xl font-bold">
               Hi, I'm{" "}
-              <span className="bg-gradient-to-r text-[60px] font-secondary font-black to-[#7fb2e2] from-secondary  bg-clip-text text-[transparent]">
+              <span className="bg-gradient-to-r text-[60px] font-secondary font-black to-[#7fb2e2] from-tertiary  bg-clip-text text-[transparent]">
                 Tomasz
               </span>
             </h1>
@@ -106,8 +135,13 @@ export default function Index() {
             </ul>
           </div>
         </div>
+        {posts.length > 0 && (
+          <button className="hover-down-effect cursor-pointer" onClick={() => handleClickScroll("blog-section")}>
+            <ArrowdownIcon height={75} width={75} />
+          </button>
+        )}
       </section>
-      <section className="px-16 flex flex-col items-center">
+      <section id="blog-section" className="px-16 pb-50 flex flex-col items-center">
         <h2 className="font-secondary text-3xl font-black leading-[0.9] pb-40">Latest Posts</h2>
         <PostList posts={posts} />
       </section>
