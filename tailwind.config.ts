@@ -106,35 +106,35 @@ export default {
       "3xl": [
         "4.8rem",
         {
-          lineHeight: "6.4rem",
+          lineHeight: "5.4rem",
           fontWeight: "400",
         },
       ],
       "4xl": [
         "6.4rem",
         {
-          lineHeight: "8.8rem",
+          lineHeight: "7rem",
           fontWeight: "400",
         },
       ],
       "5xl": [
         "7.2rem",
         {
-          lineHeight: "10rem",
+          lineHeight: "7.8rem",
           fontWeight: "400",
         },
       ],
       "6xl": [
         "8.2rem",
         {
-          lineHeight: "12rem",
+          lineHeight: "8.7rem",
           fontWeight: "400",
         },
       ],
       "7xl": [
         "9.6rem",
         {
-          lineHeight: "14rem",
+          lineHeight: "10.2rem",
           fontWeight: "400",
         },
       ],
@@ -262,6 +262,13 @@ export default {
       },
       animation: {
         "ping-slow": "ping .75s linear infinite",
+        gradient: "gradient 15s ease infinite alternate",
+      },
+      keyframes: {
+        gradient: {
+          "0%, 100%": { "background-position": "0% 50%", "background-size": "400% 400%" },
+          "50%": { "background-position": "100% 50%", "background-size": "400% 400%" },
+        },
       },
     },
   },
