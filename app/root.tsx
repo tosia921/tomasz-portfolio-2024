@@ -1,8 +1,18 @@
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction } from "@vercel/remix";
 import tailwind from "~/tailwind.css";
 import Layout from "./components/Layout";
 
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import {
+  Link,
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  isRouteErrorResponse,
+  useRouteError,
+} from "@remix-run/react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: tailwind },
@@ -37,6 +47,29 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+      </body>
+    </html>
+  );
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  return (
+    <html lang="en">
+      <head>
+        <title>Oops!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body className="w-screen h-screen flex justify-center items-center">
+        <h1 className=" flex flex-col items-center">
+          <span className="text-5xl font-secondary font-black">404</span>
+          <span className="font-secondary text-2xl font-black">Page not found</span>
+          <Link to="/" className="px-20 py-5 text-base font-normal mt-20 bg-secondary text-secondary font-primary">
+            Homepage
+          </Link>
+        </h1>
+        <Scripts />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
+import { isRouteErrorResponse, useRouteError } from "@remix-run/react";
+import type { MetaFunction } from "@vercel/remix";
 import { Link, useLoaderData } from "@remix-run/react";
 import { PostList } from "~/components";
 import { getAllPosts } from "~/queries/blog-data";
@@ -24,10 +25,10 @@ import polygon2 from "../assets/images/y-so-serious-white.png";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "RemixNode Blog" },
+    { title: "Tomasz Posiadala" },
     {
       name: "description",
-      content: "A blog front end using headless Hashnode and Remix!",
+      content: "Tomasz Posiadala - Front-end Developer Portfolio, Blog and more",
     },
   ];
 };
@@ -207,19 +208,6 @@ export default function Index() {
           </div>
         </div>
         {posts.length > 0 && posts.map((post) => <PostCard key={post?.node?.slug} post={post?.node} />)}
-        {/* <div className="overflow-hidden relative col-span-full md:col-span-2 p-8 flex justify-center rounded-3xl items-center bg-gradient-to-t from-[#003482] to-[#1368a9]">
-          <Link
-            to="https://denydevito.hashnode.dev/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex justify-center items-center gap-8"
-          >
-            <span className="text-secondary font-secondary font-black text-2xl">More on my blog</span>
-            <span className="inline">
-              <HashnodeIcon height={50} width={50} />
-            </span>
-          </Link>
-        </div> */}
       </section>
     </>
   );
