@@ -147,6 +147,7 @@ export default function Index() {
         <Link
           to="https://www.linkedin.com/in/tomasz-posiadala/"
           target="_blank"
+          aria-label="Link to my linkedIn profile"
           rel="noreferrer"
           className="cursor-pointer col-span-1 aspect-square relative flex justify-center items-center rounded-3xl bg-[#2A7AB9]"
         >
@@ -158,6 +159,7 @@ export default function Index() {
         <Link
           to="https://github.com/tosia921"
           target="_blank"
+          aria-label="Link to my github profile"
           rel="noreferrer"
           className="col-span-1 relative cursor-pointer flex justify-center rounded-3xl items-center bg-[#000000]"
         >
@@ -169,6 +171,7 @@ export default function Index() {
         <Link
           target="_blank"
           rel="noreferrer"
+          aria-label="Link to my blog"
           to="https://denydevito.hashnode.dev"
           className="col-span-full px-16 py-20 cursor-pointer md:col-start-3 md:col-end-5 flex relative justify-center rounded-3xl items-center bg-[#00B3EB]"
         >
