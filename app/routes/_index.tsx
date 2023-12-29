@@ -1,7 +1,4 @@
-import { isRouteErrorResponse, useRouteError } from "@remix-run/react";
-import type { MetaFunction } from "@vercel/remix";
 import { Link, useLoaderData } from "@remix-run/react";
-import { PostList } from "~/components";
 import { getAllPosts } from "~/queries/blog-data";
 import myPhoto from "../assets/images/MyPhoto-1.jpg";
 import hashnodeLogo from "../assets/images/hashnode.png";
@@ -11,19 +8,14 @@ import LaptopIcon from "~/icons/LaptopIcon";
 import EmailIcon from "~/icons/EmailIcon";
 import GithubIcon from "~/icons/GithubIcon";
 import LinkedinIcon from "~/icons/LinkedinIcon";
-import HashnodeIcon from "~/icons/HashnodeIcon";
 import BloggerIcon from "~/icons/BloggerIcon";
-import TwitterIcon from "~/icons/TwitterIcon";
 import ArrowdownIcon from "~/icons/ArrowdownIcon";
 import ExternalLinkIcon from "~/icons/ExternalLinkIcon";
 import PostCard from "~/components/PostCard";
 import codingGif from "../assets/images/coding-gif.gif";
-import { getFormattedDate } from "~/utils";
-import polygon from "../assets/images/polygon-scatter-haikei.png";
 import polygon3 from "../assets/images/symbol-scatter-haikei-1.png";
-import polygon2 from "../assets/images/y-so-serious-white.png";
 
-export const meta: MetaFunction = () => {
+export const meta = () => {
   return [
     { title: "Tomasz Posiadala" },
     {
