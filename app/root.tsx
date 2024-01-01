@@ -1,6 +1,9 @@
 import type { LinksFunction } from "@vercel/remix";
 import tailwind from "~/tailwind.css";
 import Layout from "./components/Layout";
+import favicon16 from "./assets/favicons/favicon-16x16.png";
+import favicon32 from "./assets/favicons/favicon-32x32.png";
+import ogimage from "./assets/images/ogimage.png";
 
 import {
   Link,
@@ -37,6 +40,14 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+        <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+        <meta name="theme-color" content="#ffffff"></meta>
+
+        <meta property="og:title" content="Tomasz Posiadala Portfolio website" />
+        <meta property="og:description" content="Tomasz Posiadala - Front-end Developer Portfolio, Blog and more" />
+        <meta property="og:image" content={ogimage} />
+
         <Meta />
         <Links />
       </head>
